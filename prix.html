@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prix des Pagnes Ivoiriens - Tradition et Élégance</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #f77f00;
+            --secondary-color: #009e60;
+            --accent-color: #ff6600;
+            --dark-green: #006600;
+            --light-bg: #f8f9fa;
+            --dark-text: #333333;
+            --light-text: #ffffff;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--light-bg);
+            color: var(--dark-text);
+            line-height: 1.6;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        .section-header {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: rgba(247, 127, 0, 0.95);
+            padding: 15px 0;
+            transition: all 0.3s ease;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar.scrolled {
+            background-color: rgba(247, 127, 0, 1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            padding: 10px 0;
+        }
+
+        .navbar-brand {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--light-text) !important;
+        }
+
+        .navbar-nav .nav-link {
+            color: var(--light-text) !important;
+            font-weight: 500;
+            margin: 0 10px;
+            padding: 8px 15px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .navbar-nav .nav-link:hover {
+            background-color: var(--secondary-color);
+            color: var(--light-text) !important;
+            transform: translateY(-2px);
+        }
+
+        .custom-toggler .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 0.8)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+        }
+
+        .custom-toggler {
+            border-color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/fabric_texture.jpg') center/cover no-repeat;
+            padding: 150px 0 80px;
+            color: var(--light-text);
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+            animation: fadeInDown 1s ease;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            animation: fadeIn 1.2s ease;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Pricing Section */
+        .pricing-section {
+            padding: 80px 0;
+            background-color: var(--light-bg);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section-header::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 70px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+
+        .pricing-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 50px;
+            font-size: 1.1rem;
+            color: #666;
+        }
+
+        .pricing-card {
+            background: var(--light-text);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            transition: all 0.4s ease;
+            border: none;
+            height: 100%;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .pricing-image {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pricing-image img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            transition: all 0.5s ease;
+        }
+
+        .pricing-card:hover .pricing-image img {
+            transform: scale(1.1);
+        }
+
+        .pricing-badge {
+            position: absolute;
+            top: 20px;
+            right: -35px;
+            background-color: var(--primary-color);
+            color: var(--light-text);
+            padding: 5px 40px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transform: rotate(45deg);
+        }
+
+        .pricing-content {
+            padding: 25px;
+        }
+
+        .pricing-title {
+            font-size: 1.6rem;
+            color: var(--dark-text);
+            margin-bottom: 15px;
+        }
+
+        .pricing-description {
+            color: #666;
+            margin-bottom: 20px;
+            min-height: 80px;
+        }
+
+        .pricing-features {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 20px;
+        }
+
+        .pricing-features li {
+            padding: 8px 0;
+            color: #555;
+            display: flex;
+            align-items: center;
+        }
+
+        .pricing-features i {
+            color: var(--secondary-color);
+            margin-right: 10px;
+        }
+
+        .pricing-price {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .price-tag {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+        }
+
+        .price-note {
+            font-size: 0.9rem;
+            color: #888;
+        }
+
+        .pricing-info {
+            font-size: 0.9rem;
+            color: #888;
+            margin-bottom: 15px;
+        }
+
+        .pricing-buttons {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .btn-custom {
+            background-color: var(--secondary-color);
+            color: var(--light-text);
+            padding: 10px 20px;
+            border-radius: 30px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 158, 96, 0.3);
+            border: none;
+            flex-grow: 1;
+            margin-right: 10px;
+        }
+
+        .btn-custom:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 102, 0, 0.4);
+            color: var(--light-text);
+        }
+
+        .btn-wishlist {
+            width: 45px;
+            height: 45px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f8f9fa;
+            border-radius: 50%;
+            border: 1px solid #ddd;
+            color: #999;
+            transition: all 0.3s ease;
+        }
+
+        .btn-wishlist:hover {
+            background-color: var(--primary-color);
+            color: var(--light-text);
+        }
+
+        /* Discount Section */
+        .discount-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/fabric_texture.jpg') center/cover no-repeat fixed;
+            color: var(--light-text);
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .discount-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .discount-title {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            color: var(--light-text);
+        }
+
+        .discount-text {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+        }
+
+        .discount-code {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: rgba(255, 255, 255, 0.15);
+            border: 2px dashed var(--light-text);
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 30px;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            padding: 80px 0;
+            background-color: #f1f1f1;
+        }
+
+        .accordion-item {
+            background-color: var(--light-text);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .accordion-button {
+            background-color: var(--light-text);
+            padding: 20px;
+            width: 100%;
+            text-align: left;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--dark-text);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .accordion-button:focus {
+            outline: none;
+        }
+
+        .accordion-button::after {
+            content: '\f107';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            color: var(--primary-color);
+            transition: all 0.3s ease;
+        }
+
+        .accordion-button[aria-expanded="true"]::after {
+            transform: rotate(180deg);
+        }
+
+        .accordion-content {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .accordion-content.active {
+            max-height: 300px;
+            padding: 0 20px 20px;
+        }
+
+        .accordion-content p {
+            margin: 0;
+            color: #666;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--dark-green);
+            color: var(--light-text);
+            padding: 60px 0 30px;
+        }
+
+        .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .footer-about {
+            margin-bottom: 30px;
+        }
+
+        .footer-links h5 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-links h5::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--primary-color);
+        }
+
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-color);
+            padding-left: 5px;
+        }
+
+        .social-links {
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            text-align: center;
+            line-height: 40px;
+            border-radius: 50%;
+            color: var(--light-text);
+            margin-right: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            margin-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+        }
+
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-color);
+            color: var(--light-text);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            z-index: 99;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .scroll-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-5px);
+        }
+
+        @media (max-width: 991px) {
+            .navbar-collapse {
+                background-color: rgba(247, 127, 0, 0.95);
+                padding: 20px;
+                border-radius: 10px;
+                margin-top: 15px;
+            }
+
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .page-header {
+                padding: 120px 0 60px;
+            }
+
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .section-header {
+                font-size: 2rem;
+                margin-bottom: 40px;
+            }
+
+            .pricing-card {
+                margin-bottom: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Barre de navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">IVOIREPAGNE</a>
+            <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#about">À Propos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#types">Types de Pagne</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#fabrication">Fabrication</a></li>
+                    <li class="nav-item"><a class="nav-link" href="prix.html">Prix</a></li>
+                    <li class="nav-item"><a class="nav-link" href="guide.html">Guide</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- En-tête de page -->
+    <header class="page-header">
+        <div class="container">
+            <h1>Nos Pagnes et Tarifs</h1>
+            <p>Découvrez notre collection exclusive de pagnes ivoiriens authentiques, mélangeant traditions ancestrales
+                et designs contemporains.</p>
+        </div>
+    </header>
+
+    <!-- Section Prix -->
+    <section class="pricing-section">
+        <div class="container">
+            <h2 class="section-header">Collection de Pagnes</h2>
+            <div class="pricing-intro">
+                <p>Tous nos pagnes sont fabriqués par des artisans qualifiés utilisant des techniques traditionnelles et
+                    des matériaux de première qualité. Chaque pièce est unique et reflète le riche patrimoine culturel
+                    ivoirien.</p>
+            </div>
+
+            <div class="row">
+                <!-- Pagne 1 -->
+                <div class="col-md-4">
+                    <div class="pricing-card">
+                        <div class="pricing-image">
+                            <img src="images/pagne_yacouba.jpg" alt="Pagne Yacouba">
+                            <div class="pricing-badge">Premium</div>
+                        </div>
+                        <div class="pricing-content">
+                            <h3 class="pricing-title">Pagne Yacouba</h3>
+                            <p class="pricing-description">Un pagne haut de gamme aux motifs géométriques et colorés,
+                                parfait pour sublimer vos événements spéciaux et cérémonies.</p>
+
+                            <ul class="pricing-features">
+                                <li><i class="fas fa-check-circle"></i> 100% coton de qualité supérieure</li>
+                                <li><i class="fas fa-check-circle"></i> Teintures naturelles</li>
+                                <li><i class="fas fa-check-circle"></i> Tissage à la main</li>
+                                <li><i class="fas fa-check-circle"></i> Dimensions: 2m x 1.5m</li>
+                            </ul>
+
+                            <div class="pricing-price">
+                                <span class="price-tag">25 000 FCFA</span>
+                                <span class="price-note">Livraison incluse</span>
+                            </div>
+
+                            <p class="pricing-info">En stock - Expédition sous 2-3 jours</p>
+
+                            <div class="pricing-buttons">
+                                <button class="btn btn-custom">Ajouter au Panier</button>
+                                <button class="btn btn-wishlist"><i class="far fa-heart"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pagne 2 -->
+                <div class="col-md-4">
+                    <div class="pricing-card">
+                        <div class="pricing-image">
+                            <img src="images/pagne_baoule.jpg" alt="Pagne Baoulé">
+                        </div>
+                        <div class="pricing-content">
+                            <h3 class="pricing-title">Pagne Baoulé</h3>
+                            <p class="pricing-description">Traditionnel et artisanal, ce pagne reflète le savoir-faire
+                                ancestral du peuple Baoulé et convient pour un usage quotidien.</p>
+
+                            <ul class="pricing-features">
+                                <li><i class="fas fa-check-circle"></i> Coton tissé à la main</li>
+                                <li><i class="fas fa-check-circle"></i> Motifs traditionnels</li>
+                                <li><i class="fas fa-check-circle"></i> Couleurs résistantes</li>
+                                <li><i class="fas fa-check-circle"></i> Dimensions: 1.8m x 1.2m</li>
+                            </ul>
+
+                            <div class="pricing-price">
+                                <span class="price-tag">15 000 FCFA</span>
+                                <span class="price-note">Livraison incluse</span>
+                            </div>
+
+                            <p class="pricing-info">En stock - Expédition sous 2-3 jours</p>
+
+                            <div class="pricing-buttons">
+                                <button class="btn btn-custom">Ajouter au Panier</button>
+                                <button class="btn btn-wishlist"><i class="far fa-heart"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pagne 3 -->
+                <div class="col-md-4">
+                    <div class="pricing-card">
+                        <div class="pricing-image">
+                            <img src="images/pagne_x.webp" alt="Pagne Sénoufo">
+                            <div class="pricing-badge">Populaire</div>
+                        </div>
+                        <div class="pricing-content">
+                            <h3 class="pricing-title">Pagne Sénoufo</h3>
+                            <p class="pricing-description">Inspiré par les traditions sénoufo, ce pagne allie élégance
+                                et authenticité, idéal pour des looks raffinés et culturels.</p>
+
+                            <ul class="pricing-features">
+                                <li><i class="fas fa-check-circle"></i> Mélange coton et fibres naturelles</li>
+                                <li><i class="fas fa-check-circle"></i> Motifs symboliques</li>
+                                <li><i class="fas fa-check-circle"></i> Finition soignée</li>
+                                <li><i class="fas fa-check-circle"></i> Dimensions: 2m x 1.3m</li>
+                            </ul>
+
+                            <div class="pricing-price">
+                                <span class="price-tag">20 000 FCFA</span>
+                                <span class="price-note">Livraison incluse</span>
+                            </div>
+
+                            <p class="pricing-info">En stock - Expédition sous 2-3 jours</p>
+
+                            <div class="pricing-buttons">
+                                <button class="btn btn-custom">Ajouter au Panier</button>
+                                <button class="btn btn-wishlist"><i class="far fa-heart"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Promotion -->
+    <section class="discount-section">
+        <div class="container">
+            <div class="discount-content">
+                <h2 class="discount-title">Offre Spéciale</h2>
+                <p class="discount-text">Pour toute commande de 3 pagnes ou plus, bénéficiez d'une réduction de 10% sur
+                    votre achat total. Utilisez le code promo ci-dessous lors de votre commande.</p>
+                <div class="discount-code">PAGNE10</div>
+                <a href="#" class="btn btn-custom btn-lg">Profiter de l'Offre</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section FAQ -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-header">Questions Fréquentes</h2>
+
+            <div class="accordion">
+                <div class="accordion-item">
+                    <button class="accordion-button" onclick="toggleAccordion(this)">Comment entretenir mon pagne
+                        ?</button>
+                    <div class="accordion-content">
+                        <p>Pour préserver la qualité et les couleurs de votre pagne, nous recommandons un lavage à la
+                            main avec un savon doux. Évitez l'utilisation d'eau de Javel et le séchage en machine. Pour
+                            le repassage, utilisez une température moyenne et placez un tissu fin entre le fer et le
+                            pagne.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-button" onclick="toggleAccordion(this)">Quels sont les délais et frais de
+                        livraison ?</button>
+                    <div class="accordion-content">
+                        <p>La livraison est gratuite sur toute la Côte d'Ivoire et s'effectue dans un délai de 2 à 5
+                            jours ouvrables. Pour les livraisons internationales, les frais varient selon la destination
+                            et le délai est généralement de 7 à 15 jours.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-button" onclick="toggleAccordion(this)">Proposez-vous des pagnes sur mesure
+                        ?</button>
+                    <div class="accordion-content">
+                        <p>Oui, nous proposons un service de personnalisation pour les commandes spéciales. Vous pouvez
+                            choisir les motifs, les couleurs et les dimensions selon vos préférences. Contactez-nous
+                            pour discuter de votre projet et obtenir un devis personnalisé.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-button" onclick="toggleAccordion(this)">Quelle est votre politique de
+                        retour ?</button>
+                    <div class="accordion-content">
+                        <p>Si vous n'êtes pas satisfait de votre achat, vous disposez de 14 jours pour nous retourner le
+                            produit dans son état d'origine. Les frais de retour sont à votre charge. Le remboursement
+                            sera effectué dans les 7 jours suivant la réception du colis retourné.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="footer-logo">Pagne Ivoirien</div>
+                    <div class="footer-about">
+                        <p>Découvrez la richesse et la diversité des pagnes ivoiriens, symboles d'une culture vibrante
+                            et d'un artisanat exceptionnel transmis de génération en génération.</p>
+                    </div>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="footer-links">
+                        <h5>Liens Rapides</h5>
+                        <ul>
+                            <li><a href="index.html#about">À Propos</a></li>
+                            <li><a href="index.html#types">Types de Pagne</a></li>
+                            <li><a href="index.html#fabrication">Fabrication</a></li>
+                            <li><a href="prix.html">Prix</a></li>
+                            <li><a href="guide.html">Guide</a></li>
+                            <li><a href="index.html#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="footer-links">
+                        <h5>Newsletter</h5>
+                        <p>Abonnez-vous pour recevoir nos dernières actualités et offres spéciales.</p>
+                        <form class="mt-4">
+                            <div class="input-group">
+                                <input type="email" class="form-control" placeholder="Votre email" required>
+                                <div class="input-group-append">
+                                    <button class="btn btn-custom" type="submit">S'abonner</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Pagne Ivoirien. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bouton Retour en haut -->
+    <a href="#" class="scroll-top" id="scrollTop">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Navbar change on scroll
+        window.addEventListener('scroll', function () {
+            var navbar = document.querySelector('.navbar');
+            var scrollTop = document.getElementById('scrollTop');
+
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+                scrollTop.classList.add('active');
+            } else {
+                navbar.classList.remove('scrolled');
+                scrollTop.classList.remove('active');
+            }
+        });
+
+        // Accordion functionality
+        function toggleAccordion(button) {
+            var content = button.nextElementSibling;
+            var isActive = content.classList.contains('active');
+
+            // Close all accordions
+            var allContents = document.querySelectorAll('.accordion-content');
+            var allButtons = document.querySelectorAll('.accordion-button');
+
+            allContents.forEach(function (item) {
+                item.classList.remove('active');
+            });
+
+            allButtons.forEach(function (item) {
+                item.setAttribute('aria-expanded', 'false');
+            });
+
+            // Open the clicked one if it was closed
+            if (!isActive) {
+                content.classList.add('active');
+                button.setAttribute('aria-expanded', 'true');
+            }
+        }
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                if (this.getAttribute('href') === '#') return;
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

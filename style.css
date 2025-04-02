@@ -1,0 +1,51 @@
+/* styles.css */
+
+/* Style de la barre de navigation */
+.navbar {
+    background-color: #343a40; /* Updated background color */
+    margin-bottom: 20px;
+}
+
+/* Effet de survol pour les éléments de navigation */
+.nav-link:hover {
+    background-color: #f8f9fa;
+    color: #343a40; /* Change text color on hover */
+}
+
+/* Style des titres */
+h1,
+h2 {
+    color: #343a40;
+}
+
+/* Style des paragraphes */
+p {
+    line-height: 1.6;
+}
+
+/* Style des cartes */
+.pagne-box {
+    margin: 15px 0;
+    transition: transform 0.3s; /* Add transition for hover effect */
+}
+
+.pagne-box:hover {
+    transform: scale(1.05); /* Scale effect on hover */
+}
+
+/* Hero section enhancements */
+.hero {
+    padding: 120px 20px; /* Increased padding */
+}
+
+.hero h1 {
+    font-size: 2.5rem; /* Increased font size */
+}
+
+/* Footer styling */
+.footer {
+    background: #009E60;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}

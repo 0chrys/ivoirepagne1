@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Guide complet d'entretien des pagnes ivoiriens - conseils pour le lavage, repassage, rangement et réparation de vos pagnes traditionnels">
+    <title>Guide d'Entretien des Pagnes - Pagne Ivoirien</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #f77f00;
+            --secondary-color: #009e60;
+            --accent-color: #ff6600;
+            --dark-green: #006600;
+            --light-bg: #f8f9fa;
+            --dark-text: #333333;
+            --light-text: #ffffff;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--light-bg);
+            color: var(--dark-text);
+            line-height: 1.6;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: rgba(247, 127, 0, 0.95);
+            padding: 15px 0;
+            transition: all 0.3s ease;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar.scrolled {
+            background-color: rgba(247, 127, 0, 1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            padding: 10px 0;
+        }
+
+        .navbar-brand {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--light-text) !important;
+        }
+
+        .navbar-nav .nav-link {
+            color: var(--light-text) !important;
+            font-weight: 500;
+            margin: 0 10px;
+            padding: 8px 15px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .navbar-nav .nav-link:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        .custom-toggler .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 0.8)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+        }
+
+        .custom-toggler {
+            border-color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/carte_pagne.jpg') center/cover no-repeat;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            position: relative;
+            margin-top: 72px;
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 800px;
+            padding: 0 20px;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+            animation: fadeInDown 1s ease;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 25px;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+            animation: fadeIn 1.2s ease;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Guide Sections */
+        .guide-section {
+            padding: 60px 30px;
+            margin: 40px auto;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .guide-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .section-header {
+            color: var(--primary-color);
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section-header::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 70px;
+            height: 3px;
+            background-color: var(--secondary-color);
+        }
+
+        .guide-section p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 25px;
+            color: #555;
+        }
+
+        .guide-section img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .guide-section img:hover {
+            transform: scale(1.02);
+        }
+
+        .guide-tips {
+            background-color: rgba(0, 158, 96, 0.1);
+            border-left: 4px solid var(--secondary-color);
+            padding: 15px 20px;
+            margin: 25px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .guide-tips h4 {
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+        }
+
+        .steps-container {
+            counter-reset: step-counter;
+        }
+
+        .step-item {
+            margin-bottom: 20px;
+            position: relative;
+            padding-left: 50px;
+        }
+
+        .step-item::before {
+            content: counter(step-counter);
+            counter-increment: step-counter;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 35px;
+            height: 35px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .faq-section {
+            background-color: #f1f1f1;
+            padding: 60px 30px;
+            border-radius: 10px;
+            margin: 40px auto;
+        }
+
+        .accordion-item {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 15px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .accordion-button {
+            background-color: white;
+            padding: 20px;
+            width: 100%;
+            text-align: left;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--dark-text);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .accordion-button:focus {
+            outline: none;
+        }
+
+        .accordion-button:hover {
+            background-color: #f9f9f9;
+        }
+
+        .accordion-button::after {
+            content: '\f107';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            color: var(--primary-color);
+            transition: all 0.3s ease;
+        }
+
+        .accordion-button[aria-expanded="true"]::after {
+            transform: rotate(180deg);
+        }
+
+        .accordion-content {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .accordion-content.active {
+            max-height: 300px;
+            padding: 0 20px 20px;
+        }
+
+        .accordion-content p {
+            margin: 0;
+            color: #666;
+        }
+
+        /* Table of Contents */
+        .toc {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .toc-title {
+            color: var(--primary-color);
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .toc-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .toc-list li {
+            padding: 8px 0;
+        }
+
+        .toc-list a {
+            color: #555;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: block;
+            padding-left: 15px;
+            border-left: 2px solid transparent;
+        }
+
+        .toc-list a:hover {
+            color: var(--primary-color);
+            border-left: 2px solid var(--primary-color);
+            padding-left: 20px;
+        }
+
+        /* Call to Action */
+        .cta-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/fabric_texture.jpg') center/cover no-repeat fixed;
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .cta-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .cta-title {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+        }
+
+        .cta-text {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+        }
+
+        .btn-custom {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 158, 96, 0.3);
+            border: none;
+        }
+
+        .btn-custom:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 102, 0, 0.4);
+            color: white;
+        }
+
+        /* Related Articles */
+        .related-section {
+            padding: 60px 0;
+        }
+
+        .related-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            margin-bottom: 30px;
+            transition: transform 0.3s ease;
+            height: 100%;
+        }
+
+        .related-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .related-image {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .related-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .related-card:hover .related-image img {
+            transform: scale(1.1);
+        }
+
+        .related-content {
+            padding: 20px;
+        }
+
+        .related-title {
+            color: var(--dark-text);
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .related-link {
+            color: var(--primary-color);
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .related-link i {
+            margin-left: 5px;
+            transition: transform 0.3s ease;
+        }
+
+        .related-link:hover {
+            color: var(--secondary-color);
+            text-decoration: none;
+        }
+
+        .related-link:hover i {
+            transform: translateX(5px);
+        }
+
+        /* Newsletter */
+        .newsletter {
+            background-color: #f1f1f1;
+            padding: 40px;
+            border-radius: 10px;
+            margin: 40px auto;
+        }
+
+        .newsletter-title {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .newsletter form {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--dark-green);
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .footer-links h5 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-links h5::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--primary-color);
+        }
+
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-color);
+            padding-left: 5px;
+        }
+
+        .social-links {
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            text-align: center;
+            line-height: 40px;
+            border-radius: 50%;
+            color: white;
+            margin-right: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            margin-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+        }
+
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            z-index: 99;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .scroll-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-5px);
+        }
+
+        /* Responsive */
+        @media (max-width: 991px) {
+            .navbar-collapse {
+                background-color: rgba(247, 127, 0, 0.95);
+                padding: 20px;
+                border-radius: 10px;
+                margin-top: 15px;
+            }
+
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .hero {
+                height: 400px;
+            }
+
+            .hero h1 {
+                font-size: 2.3rem;
+            }
+
+            .guide-section {
+                padding: 40px 20px;
+            }
+
+            .section-header {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Barre de navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Pagne Ivoirien</a>
+            <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#about">À Propos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#types">Types de Pagne</a></li>
+                    <li class="nav-item"><a class="nav-link" href="prix.html">Prix</a></li>
+                    <li class="nav-item"><a class="nav-link" href="guide.html">Guide</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Section Héro -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Guide d'Entretien des Pagnes</h1>
+            <p>Découvrez comment préserver la beauté et la longévité de vos pagnes ivoiriens avec nos conseils d'experts
+            </p>
+            <a href="#guide-content" class="btn btn-custom">Découvrir les conseils</a>
+        </div>
+    </header>
+
+    <!-- Table des matières -->
+    <div class="container" id="guide-content">
+        <div class="row mt-5">
+            <div class="col-lg-4">
+                <div class="toc sticky-top" style="top: 100px;">
+                    <h3 class="toc-title">Dans ce guide</h3>
+                    <ul class="toc-list">
+                        <li><a href="#introduction">Introduction</a></li>
+                        <li><a href="#lavage">Techniques de Lavage</a></li>
+                        <li><a href="#repassage">Conseils de Repassage</a></li>
+                        <li><a href="#rangement">Méthodes de Rangement</a></li>
+                        <li><a href="#reparation">Réparation et Entretien</a></li>
+                        <li><a href="#conseils">Préserver les Couleurs</a></li>
+                        <li><a href="#faq">Questions Fréquentes</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-lg-8">
+                <!-- Introduction -->
+                <section class="guide-section" id="introduction">
+                    <h2 class="section-header">Introduction au Soin des Pagnes</h2>
+                    <p>
+                        Les pagnes ivoiriens sont bien plus que de simples tissus; ils représentent un patrimoine
+                        culturel inestimable,
+                        racontant des histoires à travers leurs motifs et leurs couleurs. Chaque pagne est un témoin
+                        vivant de notre héritage,
+                        porteur de symboles et de valeurs ancestrales.
+                    </p>
+                    <p>
+                        Pour préserver cette richesse textile et prolonger la durée de vie de vos précieux pagnes, un
+                        entretien adapté
+                        est essentiel. La qualité des matériaux, les techniques de teinture et le tissage artisanal
+                        nécessitent des soins
+                        particuliers, différents de ceux appliqués aux textiles industriels.
+                    </p>
+                    <p>
+                        Ce guide détaillé vous accompagne à travers chaque étape de l'entretien: du lavage délicat au
+                        rangement optimal,
+                        en passant par les techniques de repassage et les astuces de réparation. Suivez nos conseils
+                        d'experts pour conserver
+                        l'éclat et la beauté de vos pagnes année après année.
+                    </p>
+                    <div class="guide-tips">
+                        <h4><i class="fas fa-lightbulb"></i> Bon à savoir</h4>
+                        <p>Avant toute manipulation, identifiez le type de pagne (coton, synthétique, mélange) et ses
+                            méthodes de teinture pour adapter au mieux vos techniques d'entretien.</p>
+                    </div>
+                </section>
+
+                <!-- Section Lavage -->
+                <section class="guide-section" id="lavage">
+                    <h2 class="section-header">Techniques de Lavage Adaptées</h2>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="images/lavage_pagne.jpg" alt="Lavage à la main d'un pagne" class="img-fluid">
+                        </div>
+                        <div class="col-md-6">
+                            <p>
+                                Le lavage représente l'étape la plus délicate de l'entretien des pagnes. Un lavage
+                                inadapté peut endommager
+                                irrémédiablement les fibres et altérer les couleurs vibrantes qui font la renommée des
+                                pagnes ivoiriens.
+                            </p>
+                            <p>
+                                <strong>Le lavage à la main reste la méthode privilégiée</strong> pour préserver
+                                l'intégrité du tissu.
+                                Utilisez de l'eau à température ambiante ou tiède, jamais chaude, car la chaleur
+                                excessive peut faire
+                                dégorger les teintures et affaiblir les fibres.
+                            </p>
+                        </div>
+                    </div>
+
+                    <h3 class="mt-4">Étapes pour un lavage optimal</h3>
+                    <div class="steps-container">
+                        <div class="step-item">
+                            <h4>Préparation</h4>
+                            <p>Retournez votre pagne sur l'envers pour protéger les motifs et couleurs. Secouez-le
+                                délicatement pour éliminer
+                                la poussière superficielle.</p>
+                        </div>
+                        <div class="step-item">
+                            <h4>Trempage</h4>
+                            <p>Faites tremper le pagne dans de l'eau tiède avec une petite quantité de savon doux ou de
+                                détergent spécial textile
+                                délicat pendant 10-15 minutes maximum.</p>
+                        </div>
+                        <div class="step-item">
+                            <h4>Nettoyage</h4>
+                            <p>Lavez doucement en pressant le tissu entre vos mains, sans frotter vigoureusement. Pour
+                                les taches tenaces,
+                                tamponnez délicatement avec un savon neutre avant de rincer.</p>
+                        </div>
+                        <div class="step-item">
+                            <h4>Rinçage</h4>
+                            <p>Rincez abondamment à l'eau claire jusqu'à élimination complète des résidus de savon, qui
+                                pourraient jaunir
+                                le tissu avec le temps.</p>
+                        </div>
+                    </div>
+
+                    <div class="guide-tips mt-4">
+                        <h4><i class="fas fa-exclamation-circle"></i> À éviter absolument</h4>
+                        <ul>
+                            <li>L'eau de Javel qui décolore et fragilise les fibres</li>
+                            <li>Les détergents industriels trop agressifs</li>
+                            <li>Le lavage en machine, sauf programme très délicat pour certains pagnes modernes</li>
+                            <li>Le trempage prolongé qui peut faire dégorger les couleurs</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- Section Repassage -->
+                <section class="guide-section" id="repassage">
+                    <h2 class="section-header">Conseils de Repassage</h2>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p>
+                                Le repassage permet de sublimer l'apparence de votre pagne tout en éliminant les plis.
+                                Cette étape requiert
+                                néanmoins une attention particulière pour ne pas endommager le tissu ou altérer les
+                                couleurs.
+                            </p>
+                            <p>
+                                La clé d'un bon repassage réside dans le réglage de la température et l'utilisation
+                                d'accessoires adaptés.
+                                Pour la majorité des pagnes en coton, une température moyenne est recommandée.
+                            </p>
+                        </div>
+                        <div class="col-md-6">
+                            <img src="images/repassage_pagne.jpg" alt="Repassage d'un pagne" class="img-fluid">
+                        </div>
+                    </div>
+
+                    <h3 class="mt-4">Technique de repassage recommandée</h3>
+                    <ul>
+                        <li>Attendez que le pagne soit légèrement humide ou utilisez un spray d'eau pour l'humidifier
+                        </li>
+                        <li>Placez un linge fin entre le fer et le pagne pour les modèles avec des motifs imprimés ou
+                            brodés</li>
+                        <li>Repassez de préférence sur l'envers pour protéger les couleurs et les motifs</li>
+                        <li>Travaillez par petites sections en évitant de laisser le fer trop longtemps au même endroit
+                        </li>
+                        <li>Pour les pagnes avec des perles ou des appliqués, évitez de repasser directement sur ces
+                            éléments</li>
+                    </ul>
+
+                    <div class="guide-tips">
+                        <h4><i class="fas fa-lightbulb"></i> Astuce d'expert</h4>
+                        <p>Pour les pagnes particulièrement délicats ou précieux, optez pour un repassage à la vapeur en
+                            tenant le fer à quelques
+                            centimètres du tissu. Cette méthode moins agressive permet d'éliminer les plis tout en
+                            préservant l'intégrité du tissu.</p>
+                    </div>
+                </section>
+
+                <!-- Section Rangement -->
+                <section class="guide-section" id="rangement">
+                    <h2 class="section-header">Méthodes de Rangement</h2>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="images/rangement_pagne.jpg" alt="Rangement des pagnes" class="img-fluid">
+                        </div>
+                        <div class="col-md-6">
+                            <p>
+                                Un rangement approprié est essentiel pour préserver la qualité de vos pagnes entre deux
+                                utilisations.
+                                Un mauvais stockage peut entraîner des plis permanents, des déformations, voire des
+                                décolorations.
+                            </p>
+                            <p>
+                                L'environnement de stockage doit être sec, à l'abri de la lumière directe du soleil et
+                                des sources de chaleur
+                                excessive. L'humidité est particulièrement néfaste car elle favorise le développement de
+                                moisissures.
+                            </p>
+                        </div>
+                    </div>
+
+                    <h3 <h3 class="mt-4">Bonnes pratiques de stockage</h3>
+                    <ul>
+                        <li>Pliez les pagnes avec du papier de soie entre les plis pour éviter les marques</li>
+                        <li>Utilisez des cintres rembourrés pour les pagnes lourds ou brodés</li>
+                        <li>Stockez à plat dans des armoires ventilées plutôt que dans des valises</li>
+                        <li>Alterner les plis régulièrement pour éviter les cassures du tissu</li>
+                        <li>Protégez des insectes avec des sachets de lavande ou de cèdre</li>
+                    </ul>
+
+                    <div class="guide-tips mt-4">
+                        <h4><i class="fas fa-box-open"></i> Solution de stockage</h4>
+                        <p>Pour une conservation longue durée (plus de 6 mois), enveloppez votre pagne dans un tissu en
+                            coton blanc propre
+                            avant de le placer dans une boîte en carton neutre, à l'abri de l'humidité et de la lumière.
+                        </p>
+                    </div>
+                </section>
+
+                <!-- Section Réparation -->
+                <section class="guide-section" id="reparation">
+                    <h2 class="section-header">Réparation et Entretien Courant</h2>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="images/reparation_pagne.jpg" alt="Réparation d'un pagne" class="img-fluid">
+                        </div>
+                        <div class="col-md-6">
+                            <p>
+                                Même avec un entretien minutieux, les pagnes peuvent parfois nécessiter des réparations.
+                                Apprenez à gérer
+                                les petits accidents pour prolonger leur durée de vie.
+                            </p>
+                            <p>
+                                Pour les réparations complexes (broderies, perles), consultez toujours un spécialiste
+                                des textiles africains.
+                                Pour les réparations simples, suivez ces conseils :
+                            </p>
+                        </div>
+                    </div>
+
+                    <h3 class="mt-4">Techniques de base</h3>
+                    <div class="steps-container">
+                        <div class="step-item">
+                            <h4>Ourlets décousus</h4>
+                            <p>Utilisez un fil de coton de couleur assortie et une aiguille fine. Faites des points
+                                invisibles
+                                en suivant le motif existant.</p>
+                        </div>
+                        <div class="step-item">
+                            <h4>Petites déchirures</h4>
+                            <p>Appliquez une rustine textile spéciale coton sur l'envers du tissu. Pour une réparation
+                                invisible,
+                                utilisez un adhésif thermocollant double face.</p>
+                        </div>
+                        <div class="step-item">
+                            <h4>Perles ou sequins perdus</h4>
+                            <p>Conservez toujours des éléments de rechange. Utilisez du fil de nylon et une aiguille à
+                                perles
+                                pour les rattacher.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section Conseils Couleurs -->
+                <section class="guide-section" id="conseils">
+                    <h2 class="section-header">Préserver les Couleurs Éclatantes</h2>
+                    <div class="row">
+                        <div class="col-md-6 order-md-2">
+                            <img src="images/couleurs_pagne.jpg" alt="Couleurs vives des pagnes" class="img-fluid">
+                        </div>
+                        <div class="col-md-6 order-md-1">
+                            <p>
+                                La vivacité des couleurs est une caractéristique essentielle des pagnes ivoiriens. Voici
+                                comment
+                                maintenir leur intensité au fil du temps :
+                            </p>
+                            <ul>
+                                <li>Lavez séparément les nouveaux pagnes lors des 3 premiers lavages</li>
+                                <li>Ajoutez 1 verre de vinaigre blanc au rinçage pour fixer les colorants</li>
+                                <li>Évitez l'exposition prolongée au soleil lors du séchage</li>
+                                <li>Utilisez des produits lessiviels sans azurants optiques</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="guide-tips mt-4">
+                        <h4><i class="fas fa-palette"></i> Test de solidité des couleurs</h4>
+                        <p>Avant le premier lavage, frottez délicatement un coin humide du pagne avec un linge blanc.
+                            Si des traces apparaissent, lavez séparément avec un fixateur de couleur.</p>
+                    </div>
+                </section>
+
+                <!-- FAQ -->
+                <section class="faq-section" id="faq">
+                    <h2 class="section-header text-center mb-5">Questions Fréquentes</h2>
+                    <div class="accordion-item">
+                        <button class="accordion-button">
+                            Peut-on utiliser une machine à laver moderne ?
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <p>Seulement pour certains pagnes synthétiques modernes. Utilisez toujours un programme
+                                délicat à froid,
+                                dans un filet de protection, et séparez les couleurs vives.</p>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <button class="accordion-button">
+                            Comment enlever les odeurs persistantes ?
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <p>Saupoudrez de bicarbonate de soude, laissez agir 1 heure avant de brosser délicatement.
+                                Pour les
+                                odeurs de transpiration, utilisez un détachant enzymatique.</p>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <button class="accordion-button">
+                            Que faire en cas de décoloration ?
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <p>Consultez un teinturier spécialisé. Certains bains de retrempe à froid avec colorants
+                                naturels
+                                peuvent raviver les teintes.</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="footer-logo">Pagne Ivoirien</div>
+                    <p>Préserver l'héritage textile de la Côte d'Ivoire à travers des conseils d'expert et la promotion
+                        de l'artisanat local.</p>
+                </div>
+                <div class="col-md-4">
+                    <div class="footer-links">
+                        <h5>Navigation</h5>
+                        <ul>
+                            <li><a href="index.html">Accueil</a></li>
+                            <li><a href="guide.html">Guide d'Entretien</a></li>
+                            <li><a href="prix.html">Prix et Marchés</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="footer-links">
+                        <h5>Ressources</h5>
+                        <ul>
+                            <li><a href="#">Ateliers de teinture</a></li>
+                            <li><a href="#">Artisans certifiés</a></li>
+                            <li><a href="#">Carte des marchés</a></li>
+                            <li><a href="#">Lexique des motifs</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Pagne Ivoirien - Tous droits réservés</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="scroll-top"><i class="fas fa-arrow-up"></i></div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // Scroll Top Button
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > 200) {
+                $('.scroll-top').addClass('active');
+            } else {
+                $('.scroll-top').removeClass('active');
+            }
+        });
+
+        $('.scroll-top').click(function () {
+            $('html, body').animate({ scrollTop: 0 }, 'smooth');
+            return false;
+        });
+
+        // Accordion
+        document.querySelectorAll('.accordion-button').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                button.classList.toggle('active');
+                content.classList.toggle('active');
+            });
+        });
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Navbar Scroll Effect
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > 50) {
+                $('.navbar').addClass('scrolled');
+            } else {
+                $('.navbar').removeClass('scrolled');
+            }
+        });
+    </script>
+</body>
+
+</html>
