@@ -12,546 +12,21 @@
         rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <style>
-        :root {
-            --primary-color: #f77f00;
-            --secondary-color: #009e60;
-            --accent-color: #ff6600;
-            --dark-green: #006600;
-            --light-bg: #f8f9fa;
-            --dark-text: #333333;
-            --light-text: #ffffff;
-        }
-
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: var(--light-bg);
-            color: var(--dark-text);
-            line-height: 1.6;
-        }
-
-        h1,
-        h2,
-        h3,
-        h4,
-        .section-header {
-            font-family: 'Playfair Display', serif;
-            font-weight: 700;
-        }
-
-        .navbar {
-            background-color: rgba(247, 127, 0, 0.95);
-            padding: 15px 0;
-            transition: all 0.3s ease;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .navbar.scrolled {
-            background-color: rgba(247, 127, 0, 1);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            padding: 10px 0;
-        }
-
-        .navbar-brand {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--light-text) !important;
-        }
-
-        .navbar-nav .nav-link {
-            color: var(--light-text) !important;
-            font-weight: 500;
-            margin: 0 10px;
-            padding: 8px 15px;
-            border-radius: 20px;
-            transition: all 0.3s ease;
-        }
-
-        .navbar-nav .nav-link:hover {
-            background-color: var(--secondary-color);
-            color: var(--light-text) !important;
-            transform: translateY(-2px);
-        }
-
-        .custom-toggler .navbar-toggler-icon {
-            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 0.8)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
-        }
-
-        .custom-toggler {
-            border-color: rgba(255, 255, 255, 0.8);
-        }
-
-        .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/carte_pagne.jpg') center/cover no-repeat;
-            color: var(--light-text);
-            text-align: center;
-            padding: 180px 20px 100px;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
-            animation: fadeInDown 1s ease;
-        }
-
-        .hero p {
-            font-size: 1.5rem;
-            margin-bottom: 30px;
-            font-weight: 300;
-            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
-            animation: fadeIn 1.2s ease;
-        }
-
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-
-            to {
-                opacity: 1;
-            }
-        }
-
-        .btn-custom {
-            background-color: var(--secondary-color);
-            color: var(--light-text);
-            padding: 12px 30px;
-            border-radius: 30px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0, 158, 96, 0.3);
-            border: none;
-        }
-
-        .btn-custom:hover {
-            background-color: var(--accent-color);
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(255, 102, 0, 0.4);
-            color: var(--light-text);
-        }
-
-        .section {
-            padding: 100px 0;
-            position: relative;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 60px;
-            font-size: 2.5rem;
-            color: var(--secondary-color);
-            position: relative;
-            padding-bottom: 15px;
-        }
-
-        .section-header::after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 70px;
-            height: 3px;
-            background-color: var(--primary-color);
-        }
-
-        .about-content {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            margin-bottom: 40px;
-        }
-
-        .pagne-box {
-            background: var(--light-text);
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-            margin-bottom: 40px;
-            transition: all 0.4s ease;
-            height: 100%;
-            overflow: hidden;
-        }
-
-        .pagne-box:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-        }
-
-        .pagne-box img {
-            width: 100%;
-            border-radius: 12px;
-            height: 300px;
-            object-fit: cover;
-            margin-bottom: 20px;
-            transition: all 0.5s ease;
-        }
-
-        .pagne-box:hover img {
-            transform: scale(1.05);
-        }
-
-        .pagne-box h4 {
-            font-size: 1.4rem;
-            margin-bottom: 15px;
-            color: var(--primary-color);
-        }
-
-        .pagne-box p {
-            font-size: 1rem;
-            color: #666;
-        }
-
-        .fabrication {
-            background-color: var(--light-bg);
-            position: relative;
-        }
-
-        .fabrication-content {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .fabrication-steps {
-            margin-top: 50px;
-        }
-
-        .step-item {
-            text-align: center;
-            padding: 20px;
-        }
-
-        .step-icon {
-            background-color: var(--primary-color);
-            color: var(--light-text);
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 0 auto 20px;
-            font-size: 1.8rem;
-            box-shadow: 0 5px 15px rgba(247, 127, 0, 0.3);
-        }
-
-        .step-item h4 {
-            margin-bottom: 15px;
-            color: var(--secondary-color);
-        }
-
-        .testimonials {
-            background: linear-gradient(rgba(0, 102, 0, 0.9), rgba(0, 102, 0, 0.9)), url('images/fabric_texture.jpg') center/cover no-repeat fixed;
-            color: var(--light-text);
-            padding: 100px 0;
-        }
-
-        .testimonials .section-header {
-            color: var(--light-text);
-        }
-
-        .testimonials .section-header::after {
-            background-color: var(--light-text);
-        }
-
-        .testimonial-item {
-            background-color: rgba(255, 255, 255, 0.1);
-            padding: 30px;
-            border-radius: 15px;
-            margin: 20px 15px;
-            backdrop-filter: blur(5px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .testimonial-content {
-            font-style: italic;
-            font-size: 1.1rem;
-            margin-bottom: 20px;
-            line-height: 1.6;
-        }
-
-        .testimonial-author {
-            font-weight: 600;
-            font-size: 1rem;
-            display: flex;
-            align-items: center;
-        }
-
-        .author-img {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-right: 15px;
-            border: 2px solid var(--primary-color);
-        }
-
-        .author-info {
-            line-height: 1.2;
-        }
-
-        .author-role {
-            font-size: 0.85rem;
-            opacity: 0.8;
-        }
-
-        .contact {
-            background-color: var(--light-bg);
-        }
-
-        .contact-form {
-            background-color: var(--light-text);
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-        }
-
-        .form-control {
-            border: none;
-            border-bottom: 2px solid #ddd;
-            border-radius: 0;
-            padding: 15px 0;
-            margin-bottom: 25px;
-            transition: all 0.3s ease;
-            box-shadow: none;
-            background-color: transparent;
-        }
-
-        .form-control:focus {
-            border-color: var(--primary-color);
-            box-shadow: none;
-        }
-
-        .form-label {
-            color: #666;
-            font-weight: 500;
-            text-transform: uppercase;
-            font-size: 0.85rem;
-            letter-spacing: 1px;
-            transition: all 0.3s ease;
-        }
-
-        .contact-info {
-            padding: 20px;
-        }
-
-        .contact-info h4 {
-            margin-bottom: 20px;
-            color: var(--secondary-color);
-        }
-
-        .contact-item {
-            display: flex;
-            margin-bottom: 30px;
-            align-items: flex-start;
-        }
-
-        .contact-icon {
-            color: var(--primary-color);
-            font-size: 1.5rem;
-            margin-right: 15px;
-            min-width: 40px;
-        }
-
-        .footer {
-            background-color: var(--dark-green);
-            color: var(--light-text);
-            padding: 60px 0 30px;
-        }
-
-        .footer-logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-        }
-
-        .footer-about {
-            margin-bottom: 30px;
-        }
-
-        .footer-links h5 {
-            font-size: 1.2rem;
-            margin-bottom: 20px;
-            position: relative;
-            padding-bottom: 10px;
-        }
-
-        .footer-links h5::after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 40px;
-            height: 2px;
-            background-color: var(--primary-color);
-        }
-
-        .footer-links ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .footer-links li {
-            margin-bottom: 10px;
-        }
-
-        .footer-links a {
-            color: rgba(255, 255, 255, 0.8);
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .footer-links a:hover {
-            color: var(--primary-color);
-            padding-left: 5px;
-        }
-
-        .social-links {
-            margin-top: 20px;
-        }
-
-        .social-links a {
-            display: inline-block;
-            width: 40px;
-            height: 40px;
-            background-color: rgba(255, 255, 255, 0.1);
-            text-align: center;
-            line-height: 40px;
-            border-radius: 50%;
-            color: var(--light-text);
-            margin-right: 10px;
-            transition: all 0.3s ease;
-        }
-
-        .social-links a:hover {
-            background-color: var(--primary-color);
-            transform: translateY(-3px);
-        }
-
-        .copyright {
-            text-align: center;
-            padding-top: 30px;
-            margin-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            font-size: 0.9rem;
-        }
-
-        .scroll-top {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 50px;
-            height: 50px;
-            background-color: var(--primary-color);
-            color: var(--light-text);
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 1.2rem;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-            z-index: 99;
-            opacity: 0;
-            visibility: hidden;
-        }
-
-        .scroll-top.active {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .scroll-top:hover {
-            background-color: var(--secondary-color);
-            transform: translateY(-5px);
-        }
-
-        @media (max-width: 991px) {
-            .navbar-collapse {
-                background-color: rgba(247, 127, 0, 0.95);
-                padding: 20px;
-                border-radius: 10px;
-                margin-top: 15px;
-            }
-
-            .hero h1 {
-                font-size: 2.8rem;
-            }
-
-            .hero p {
-                font-size: 1.3rem;
-            }
-        }
-
-        @media (max-width: 767px) {
-            .section {
-                padding: 70px 0;
-            }
-
-            .section-header {
-                font-size: 2rem;
-                margin-bottom: 40px;
-            }
-
-            .hero h1 {
-                font-size: 2.2rem;
-            }
-
-            .hero p {
-                font-size: 1.1rem;
-            }
-
-            .pagne-box {
-                padding: 20px;
-            }
-
-            .pagne-box img {
-                height: 200px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="index.css">
+    <meta name="description"
+        content="Découvrez l'histoire, la fabrication et la culture du pagne ivoirien. Types de pagnes, techniques artisanales et signification culturelle en Côte d'Ivoire.">
+    <meta name="keywords"
+        content="pagne ivoirien, tissu africain, culture ivoirienne, artisanat africain, tissage traditionnel, mode africaine, Côte d'Ivoire">
+    <meta name="author" content="IVOIREPAGNE">
+    <link rel="canonical" href="https://0chrys.github.io/ivoirepagne1">
 </head>
 
 <body>
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#">IVOIREPAGNE</a>
-            <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+            <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-label="Menu navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -581,14 +56,11 @@
             <h2 class="section-header">À propos du Pagne Ivoirien</h2>
             <div class="about-content">
                 <p>Le pagne est bien plus qu'un simple vêtement, il est le symbole de l'identité ivoirienne. Porté lors
-                    des
-                    événements familiaux et communautaires, il témoigne d'une profonde richesse culturelle. Depuis des
-                    siècles,
-                    le pagne a évolué, mais reste un symbole incontournable de l'héritage africain.</p>
+                    des événements familiaux et communautaires, il témoigne d'une profonde richesse culturelle. Depuis
+                    des siècles, le pagne a évolué, mais reste un symbole incontournable de l'héritage africain.</p>
                 <p>En Côte d'Ivoire, chaque ethnie et région ont leur propre style et leurs motifs uniques, créant ainsi
-                    une
-                    diversité de pagnes aux significations particulières. Ces tissus colorés racontent des histoires,
-                    préservent la mémoire collective et renforcent les liens communautaires.</p>
+                    une diversité de pagnes aux significations particulières. Ces tissus colorés racontent des
+                    histoires, préservent la mémoire collective et renforcent les liens communautaires.</p>
             </div>
         </div>
     </section>
@@ -600,7 +72,8 @@
             <div class="row">
                 <div class="col-md-4">
                     <div class="pagne-box">
-                        <img src="images/pagne_yacouba.jpg" class="img-fluid" alt="Pagne Yacouba">
+                        <img src="images/pagne_yacouba.jpg" class="img-fluid"
+                            alt="Pagne Yacouba - motifs géométriques colorés">
                         <h4>Pagne Yacouba</h4>
                         <p>Le pagne Yacouba, originaire de l'ouest de la Côte d'Ivoire, se distingue par ses motifs
                             géométriques et ses couleurs vibrantes. Ce pagne est souvent porté lors des mariages et des
@@ -610,26 +83,23 @@
                 </div>
                 <div class="col-md-4">
                     <div class="pagne-box">
-                        <img src="images/pagne_baoule.jpg" class="img-fluid" alt="Pagne Baoulé">
+                        <img src="images/pagne_baoule.jpg" class="img-fluid" alt="Pagne Baoulé - tissage artisanal fin">
                         <h4>Pagne Baoulé</h4>
                         <p>Le pagne Baoulé est tissé à la main par les artisans Baoulé, dont les techniques de
-                            fabrication
-                            sont transmises de génération en génération. Ce type de pagne est prisé pour sa finesse et
-                            la
-                            complexité de ses motifs, qui sont un mélange de culture et d'artisanat. Il est souvent
-                            associé
-                            aux célébrations religieuses et coutumières.</p>
+                            fabrication sont transmises de génération en génération. Ce type de pagne est prisé pour sa
+                            finesse et la complexité de ses motifs, qui sont un mélange de culture et d'artisanat. Il
+                            est souvent associé aux célébrations religieuses et coutumières.</p>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="pagne-box">
-                        <img src="images/pagne_x.webp" class="img-fluid" alt="Pagne Sénoufo">
+                        <img src="images/pagne_x.webp" class="img-fluid"
+                            alt="Pagne Sénoufo - motifs traditionnels sombres">
                         <h4>Pagne Sénoufo</h4>
                         <p>Le pagne Sénoufo, symbolique des traditions et de la spiritualité, est réputé pour sa couleur
                             sombre et ses dessins subtils. Chaque motif fait référence aux esprits ancestraux et aux
-                            rites
-                            liés aux forces naturelles. Il est souvent porté lors des rites de passage et des cérémonies
-                            initiatiques.</p>
+                            rites liés aux forces naturelles. Il est souvent porté lors des rites de passage et des
+                            cérémonies initiatiques.</p>
                     </div>
                 </div>
             </div>
@@ -642,18 +112,15 @@
             <h2 class="section-header">La Fabrication du Pagne</h2>
             <div class="fabrication-content">
                 <p>La fabrication du pagne ivoirien est un processus méticuleux qui nécessite des compétences
-                    artisanales
-                    exceptionnelles. Le tissage est généralement effectué à la main, une technique vieille de plusieurs
-                    siècles,
-                    utilisant des métiers à tisser traditionnels. Les artisans utilisent des fils de coton ou de soie,
-                    teints
-                    avec des colorants naturels provenant de la flore locale.</p>
+                    artisanales exceptionnelles. Le tissage est généralement effectué à la main, une technique vieille
+                    de plusieurs siècles, utilisant des métiers à tisser traditionnels. Les artisans utilisent des fils
+                    de coton ou de soie, teints avec des colorants naturels provenant de la flore locale.</p>
             </div>
             <div class="row fabrication-steps">
                 <div class="col-md-3">
                     <div class="step-item">
                         <div class="step-icon">
-                            <i class="fas fa-leaf"></i>
+                            <i class="fas fa-leaf" aria-hidden="true"></i>
                         </div>
                         <h4>Récolte</h4>
                         <p>Collecte de matières premières et préparation des fibres naturelles.</p>
@@ -662,7 +129,7 @@
                 <div class="col-md-3">
                     <div class="step-item">
                         <div class="step-icon">
-                            <i class="fas fa-palette"></i>
+                            <i class="fas fa-palette" aria-hidden="true"></i>
                         </div>
                         <h4>Teinture</h4>
                         <p>Coloration des fils avec des pigments naturels issus de plantes locales.</p>
@@ -671,7 +138,7 @@
                 <div class="col-md-3">
                     <div class="step-item">
                         <div class="step-icon">
-                            <i class="fas fa-tools"></i>
+                            <i class="fas fa-tools" aria-hidden="true"></i>
                         </div>
                         <h4>Tissage</h4>
                         <p>Création minutieuse du tissu sur des métiers à tisser traditionnels.</p>
@@ -680,7 +147,7 @@
                 <div class="col-md-3">
                     <div class="step-item">
                         <div class="step-icon">
-                            <i class="fas fa-paint-brush"></i>
+                            <i class="fas fa-paint-brush" aria-hidden="true"></i>
                         </div>
                         <h4>Motifs</h4>
                         <p>Application de motifs traditionnels chargés de symbolisme culturel.</p>
@@ -699,11 +166,10 @@
                     <div class="testimonial-item">
                         <div class="testimonial-content">
                             "Le pagne ivoirien est plus qu'un simple vêtement, c'est un moyen d'expression culturelle.
-                            Chaque
-                            motif raconte une histoire qui nous connecte à nos racines et à notre identité."
+                            Chaque motif raconte une histoire qui nous connecte à nos racines et à notre identité."
                         </div>
                         <div class="testimonial-author">
-                            <img src="/api/placeholder/80/80" alt="Marie" class="author-img">
+                            <img src="images/testimonial1.jpg" alt="Portrait de Marie" class="author-img">
                             <div class="author-info">
                                 Marie<br>
                                 <span class="author-role">Créatrice de mode</span>
@@ -718,7 +184,7 @@
                             transmettre aux générations futures pour maintenir notre culture vivante."
                         </div>
                         <div class="testimonial-author">
-                            <img src="/api/placeholder/80/80" alt="Kouadio" class="author-img">
+                            <img src="images/testimonial2.jpg" alt="Portrait de Kouadio" class="author-img">
                             <div class="author-info">
                                 Kouadio<br>
                                 <span class="author-role">Artisan tisserand</span>
@@ -730,11 +196,10 @@
                     <div class="testimonial-item">
                         <div class="testimonial-content">
                             "Le pagne ivoirien est un symbole de fierté, une vraie identité africaine que le monde
-                            entier
-                            doit connaître. Ces tissus sont de véritables œuvres d'art à porter."
+                            entier doit connaître. Ces tissus sont de véritables œuvres d'art à porter."
                         </div>
                         <div class="testimonial-author">
-                            <img src="/api/placeholder/80/80" alt="Amina" class="author-img">
+                            <img src="images/testimonial3.jpg" alt="Portrait de Amina" class="author-img">
                             <div class="author-info">
                                 Amina<br>
                                 <span class="author-role">Touriste</span>
@@ -757,24 +222,24 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label class="form-label">Nom</label>
-                                        <input type="text" class="form-control" required>
+                                        <label for="name" class="form-label">Nom</label>
+                                        <input type="text" class="form-control" id="name" required>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label class="form-label">Email</label>
-                                        <input type="email" class="form-control" required>
+                                        <label for="email" class="form-label">Email</label>
+                                        <input type="email" class="form-control" id="email" required>
                                     </div>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="form-label">Sujet</label>
-                                <input type="text" class="form-control">
+                                <label for="subject" class="form-label">Sujet</label>
+                                <input type="text" class="form-control" id="subject">
                             </div>
                             <div class="form-group">
-                                <label class="form-label">Message</label>
-                                <textarea class="form-control" rows="5" required></textarea>
+                                <label for="message" class="form-label">Message</label>
+                                <textarea class="form-control" id="message" rows="5" required></textarea>
                             </div>
                             <button type="submit" class="btn btn-custom">Envoyer le message</button>
                         </form>
@@ -785,7 +250,7 @@
                         <h4>Nos Informations</h4>
                         <div class="contact-item">
                             <div class="contact-icon">
-                                <i class="fas fa-map-marker-alt"></i>
+                                <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
                             </div>
                             <div>
                                 <h5>Adresse</h5>
@@ -794,7 +259,7 @@
                         </div>
                         <div class="contact-item">
                             <div class="contact-icon">
-                                <i class="fas fa-phone-alt"></i>
+                                <i class="fas fa-phone-alt" aria-hidden="true"></i>
                             </div>
                             <div>
                                 <h5>Téléphone</h5>
@@ -803,7 +268,7 @@
                         </div>
                         <div class="contact-item">
                             <div class="contact-icon">
-                                <i class="fas fa-envelope"></i>
+                                <i class="fas fa-envelope" aria-hidden="true"></i>
                             </div>
                             <div>
                                 <h5>Email</h5>
@@ -812,7 +277,7 @@
                         </div>
                         <div class="contact-item">
                             <div class="contact-icon">
-                                <i class="fas fa-clock"></i>
+                                <i class="fas fa-clock" aria-hidden="true"></i>
                             </div>
                             <div>
                                 <h5>Horaires d'ouverture</h5>
@@ -835,10 +300,10 @@
                             et d'un artisanat exceptionnel transmis de génération en génération.</p>
                     </div>
                     <div class="social-links">
-                        <a href="#"><a href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fab fa-instagram"></i></a>
-                            <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
                 <div class="col-lg-4">
@@ -860,7 +325,8 @@
                         <p>Abonnez-vous pour recevoir nos dernières actualités et offres spéciales.</p>
                         <form class="mt-4">
                             <div class="input-group">
-                                <input type="email" class="form-control" placeholder="Votre email" required>
+                                <input type="email" class="form-control" placeholder="Votre email" required
+                                    aria-label="Votre adresse email">
                                 <div class="input-group-append">
                                     <button class="btn btn-custom" type="submit">S'abonner</button>
                                 </div>
@@ -875,7 +341,7 @@
         </div>
     </footer>
 
-    <a href="#" class="scroll-top">
+    <a href="#" class="scroll-top" aria-label="Retour en haut de page">
         <i class="fas fa-angle-up"></i>
     </a>
 
@@ -928,8 +394,7 @@
         // Mobile menu closing after click
         $('.navbar-nav>li>a').on('click', function () {
             $('.navbar-collapse').collapse('hide');
-        });
-    </script>
+        });</script>
 </body>
 
 </html>
