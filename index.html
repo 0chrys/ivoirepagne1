@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Le Pagne Ivoirien - Histoire, Fabrication et Culture</title>
+    <link rel="stylesheet" href="index.css">
     <link rel="preconnect" href="[https://fonts.googleapis.com](https://fonts.googleapis.com)">
     <link rel="preconnect" href="[https://fonts.gstatic.com](https://fonts.gstatic.com)" crossorigin>
     <link
@@ -418,7 +419,12 @@
             currentImage = (currentImage + 1) % totalImages;
             images[currentImage].classList.add('active');
         }
-
+        // // Parallax effect
+        // window.addEventListener('scroll', function () {
+        //     const hero = document.querySelector('.hero[data-parallax="true"]');
+        //     const scrolled = window.pageYOffset;
+        //     hero.style.backgroundPositionY = -(scrolled * 0.5) + 'px';
+        // });
         setInterval(changeImage, 5000);
     </script>
 </body>
